@@ -1,0 +1,13 @@
+[Unit]
+Description = Journalbeat
+After = syslog.target network.target
+
+[Service]
+Type = simple
+
+WorkingDirectory = /var/lib/journalbeat
+
+ExecStart = /usr/sbin/journalbeat
+
+[Install]
+WantedBy = multi-user.target
