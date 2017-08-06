@@ -1,7 +1,6 @@
 PKGNAME=journalbeat
 PKGVERSION=5.5.0
 PKGRELEASE=1
-#PKGROOT=events-service
 
 all: build
 
@@ -14,7 +13,7 @@ prepare:
 	mkdir -p rpmbuild/BUILDROOT
 	cp src/* rpmbuild/SOURCES
 	cp $(PKGNAME).spec rpmbuild/SPECS
-	wget -N "https://github.com/mheese/journalbeat/archive/v$(PKGVERSION).tar.gz" -O rpmbuild/SOURCES/$(PKGNAME)-v$(PKGVERSION).tar.gz
+	wget -N "https://github.com/fholzer/journalbeat/archive/v$(PKGVERSION).tar.gz" -O rpmbuild/SOURCES/$(PKGNAME)-v$(PKGVERSION).tar.gz
 
 build: prepare
 	rpmbuild -bb \
